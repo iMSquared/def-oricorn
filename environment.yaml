@@ -1,0 +1,31 @@
+name: instantsoup
+channels: 
+  - nvidia
+  - conda-forge
+  - fvcore
+  - iopath
+dependencies:
+  - python=3.9.*
+  - cuda-toolkit=12.1.*
+  - fvcore 
+  - iopath
+  - pip
+  - pip:
+    - jax[cuda12]==0.4.26 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+    - jaxlib[cuda12]==0.4.26 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+    - flax
+    - dm-pix
+    - ott-jax
+    - optax
+    - e3nn-jax
+    - scipy
+    - einops
+    - python-fcl
+    - ray
+    - pybullet
+    - open3d
+    - opencv-python
+    - torch==2.2.2 -f https://download.pytorch.org/whl/cu121
+    - torchvision==0.17.2 -f https://download.pytorch.org/whl/cu121
+    - torchaudio==2.2.2 -f https://download.pytorch.org/whl/cu121 
+    - nvisii
