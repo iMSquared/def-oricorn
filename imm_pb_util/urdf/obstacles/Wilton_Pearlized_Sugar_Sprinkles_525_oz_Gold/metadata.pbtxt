@@ -1,0 +1,39 @@
+model {
+  file: "model.sdf"
+}
+name: "Wilton_Pearlized_Sugar_Sprinkles_525_oz_Gold"
+description: "Wilton Pearlized Sugar Sprinkles 5.25 oz. - Gold\nMade in the USA."
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Wilton"
+}
+annotations {
+  key: "gtin"
+  value: "00070896700414"
+}
+annotations {
+  key: "mpn"
+  value: "w710041"
+}
+annotations {
+  key: "sku"
+  value: "9091050_20130419_60650813"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Bottles and Cans and Cups"
+}

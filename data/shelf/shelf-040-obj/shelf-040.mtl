@@ -1,0 +1,15 @@
+# Blender MTL File: 'shelf-040.blend'
+# Material Count: 1
+
+newmtl shelf-040
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump textures/shelf-040-nrm-metalness-4k.png
+map_Ns textures/shelf-040-roughness-metalness-4k.png
+refl textures/shelf-040-metalness-metalness-4k.png

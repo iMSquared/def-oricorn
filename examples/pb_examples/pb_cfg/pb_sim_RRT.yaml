@@ -1,0 +1,95 @@
+project_params:
+  debug_show_gui: True
+  # debug_delay_gui: 0.004166666666666667
+  debug_delay_gui: 0.
+  custom_urdf_path: "urdf"
+
+sim_params:
+  control_hz: 240.0
+  gravity: -9.81
+  debug_camera:
+    distance: 1.4
+    yaw: 45
+    pitch: -40
+    target_position: [-0.2, -0.1, 0.3]
+
+manipulation_params:
+  inverse_kinematics:
+    max_num_iterations: 10000
+    residual_threshold: 1.0E-12
+    max_num_variations: 1
+  rrt_restarts: 10
+  rrt_iterations: 50
+  rrt_star_max_iterations: 3000
+  touch_tol: 0.0
+
+
+env_params:
+  assets:
+  # - name: "cabinet"
+  #   bullet_integrated: False
+  #   urdf_name: "cabinet/cabinet.urdf"
+  #   base_pos: [0.0, 0.0, -10]
+  #   base_orn: [0.0, 0.0, 1.5707963]
+
+camera_params:
+  # Intrinsic is calibrated with NOCS dataset. Do not change.  
+  cameras:
+    - type: "simple"
+      extrinsic:
+        gl_pos: [0.0, -0.85, 1.1]
+        gl_orn: [1.1, 0, 0]
+      intrinsic:
+        fov: 42.5
+        width: 424
+        height: 240
+        focusing_distance: 0.9
+        gl_near_val: 0.1
+        gl_far_val: 3.0
+    - type: "simple"
+      extrinsic:
+        gl_pos: [0.4, -0.9, 0.9]
+        gl_orn: [1.25, 0, 0.4]
+      intrinsic:
+        fov: 42.5
+        width: 424
+        height: 240
+        focusing_distance: 0.9
+        gl_near_val: 0.1
+        gl_far_val: 3.0
+    - type: "simple"
+      extrinsic:
+        gl_pos: [-0.4, -0.9, 0.9]
+        gl_orn: [1.25, 0, -0.4]
+      intrinsic:
+        fov: 42.5
+        width: 424
+        height: 240
+        focusing_distance: 0.9
+        gl_near_val: 0.1
+        gl_far_val: 3.0
+
+
+robot_params:
+  franka_panda:
+    path: "franka_panda/urdf"
+    base_pos: [0.0, -0.6, 0.0]
+    base_orn: [0.0, 0.0, 1.5707]
+    link_index_endeffector_base: 8  # Index starts from -1
+    nonfixed_joint_indices_arm: [0, 1, 2, 3, 4, 5, 6]
+    rest_pose: [
+      0.0,     # Joint 0
+      -0.785,  # Joint 1
+      0.0,     # Joint 2
+      -2,      # Joint 3
+      0.0,     # Joint 4
+      1.5708,  # Joint 5
+      0.785,   # Joint 6   (Wrist)
+      0.0,     # Joint 7   (Fixed)
+      0.0,     # Joint 8   (EE-base)
+      0.0,     # Joint 9   (Finger)
+      0.0,     # Joint 10  (Finger)
+    ]
+    finger_indices: [9, 10]
+    finger_travel: 0.08
+    finger_force: 20.

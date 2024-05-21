@@ -27,7 +27,6 @@ import util.franka_util as fkutil
 import util.environment_util as envutil
 import util.rrt as rrtutil
 import util.transform_util as tutil
-import util.PRM as PRM
 import util.io_util as ioutil
 
 
@@ -624,7 +623,6 @@ class InfCls(object):
         # Logging
         self.__log_time(est_time.duration, opt_time.duration, verbose)
         if self.save_images:    
-            # NOTE(ssh): This is super slow... > 1s
             self.__save_images(
                 rgbs_origin, cam_intrinsics_origin, cam_posquats_offset,
                 x_pred, conf, obs_preds, seg_obs_original_size, seg_global,
@@ -672,8 +670,7 @@ class InfCls(object):
             aux_inf: InferenceAux,
     ):
         """ Recover rendering from previous prediction
-        
-        NOTE(ssh): Refactor this later..."""
+        """
         #   Resize (space to perform seg optimization)
         origin_pixel_size = rgbs_origin.shape[-3:-1]
 

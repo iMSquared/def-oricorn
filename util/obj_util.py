@@ -11,7 +11,6 @@ import util.cvx_util as cxutil
 
 
 class ObjCls(object):
-    """NOTE(ssh): Need to clean up unused arguments..."""
     def __init__(
             self, 
             obj_finename=None, 

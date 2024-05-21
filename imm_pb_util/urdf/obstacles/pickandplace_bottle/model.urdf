@@ -1,0 +1,31 @@
+<?xml version="0.0" ?>
+<robot name="model.urdf">
+  <link name="baseLink">
+    <contact>
+      <lateral_friction value="10.0"/>
+      <rolling_friction value="0.1"/>
+      <spinning_friction value="0.1"/>
+      <contact_cfm value="0.8"/>
+      <contact_erp value="0.8"/>
+      <restitution value="0.5"/>
+    </contact>
+    <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+       <mass value="0.5"/>
+       <inertia ixx="1e-3" ixy="0" ixz="0" iyy="1e-3" iyz="0" izz="1e-3"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="core-bottle-95e6a3a1232f97e3d333084c1357713e.obj" scale="0.6 0.6 0.6"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1. 1. 1. 1."/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="core-bottle-95e6a3a1232f97e3d333084c1357713e.obj" scale="0.6 0.6 0.6"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

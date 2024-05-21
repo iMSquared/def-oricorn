@@ -1,0 +1,135 @@
+<robot name="cabinet">
+  <material name="white"><color rgba="1.0 1.0 1.0 1.0"/></material>
+  <link name="base_link">
+    <inertial>
+      <mass value="0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <!-- <link name="top_plate">
+    <inertial>
+      <mass value="5.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0"  izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="wood.obj" scale="0.4 0.825 0.02"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.825 0.02"/>
+      </geometry>
+    </collision>
+  </link> -->
+    <link name="bottom_plate">
+    <inertial>
+      <mass value="5.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0"  izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="wood.obj" scale="0.4 0.825 0.02"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.825 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_plate">
+    <inertial>
+      <mass value="5.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0"  izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="wood.obj" scale="0.4 0.02 0.395"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.02 0.395"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_plate">
+    <inertial>
+      <mass value="5.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0"  izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="wood.obj" scale="0.4 0.02 0.395"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.02 0.395"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="back_plate">
+    <inertial>
+      <mass value="5.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0"  izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="wood.obj" scale="0.02 0.865 0.395"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.02 0.865 0.395"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- <joint name="top_plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="top_plate"/>
+    <origin xyz="0.00 0.00 0.365"/>
+  </joint> -->
+    <joint name="bottom_plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="bottom_plate"/>
+    <origin xyz="0.00 0.00 -0.01"/>
+  </joint>
+  <joint name="left_plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_plate"/>
+    <origin xyz="0.00 0.4225 0.1775"/>
+  </joint>
+  <joint name="right_plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_plate"/>
+    <origin xyz="0.00 -0.4225 0.1775"/>
+  </joint>
+  <joint name="back_plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="back_plate"/>
+    <origin xyz="0.21 0.00 0.1775"/>
+  </joint>
+</robot>

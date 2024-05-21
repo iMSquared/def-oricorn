@@ -1,4 +1,4 @@
-name: instantsoup
+name: oricorn
 channels: 
   - nvidia
   - conda-forge
@@ -29,3 +29,8 @@ dependencies:
     - torchvision==0.17.2 -f https://download.pytorch.org/whl/cu121
     - torchaudio==2.2.2 -f https://download.pytorch.org/whl/cu121 
     - nvisii
+    - tensorboard
+    - PyMCubes
+    - bidict
+    - ftfy
+    - regex

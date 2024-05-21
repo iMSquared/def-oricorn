@@ -30,7 +30,7 @@ def get_current_timestamp():
 
 
 def profile_time(function, print_log=False):
-    """NOTE(ssh): Some custom decorator for profiling."""
+    """Some custom decorator for profiling."""
     def wrapper(*args, **kwargs):
         # Profiler start
         # print(f"{function.__name__} start")

@@ -1,0 +1,110 @@
+<robot name="cabinet">
+  <material name="pink"><color rgba="1.0 0.5 1.0 1.0"/></material>
+  <link name="base_link">
+    <inertial>
+      <mass value="0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <link name="left_plate">
+    <inertial>
+      <mass value="5.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0"  izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.01 0.08"/>
+      </geometry>
+      <material name="pink"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.01 0.08"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_plate">
+    <inertial>
+      <mass value="5.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0"  izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.01 0.08"/>
+      </geometry>
+      <material name="pink"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.01 0.08"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="back_plate">
+    <inertial>
+      <mass value="5.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0"  izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.12 0.08"/>
+      </geometry>
+      <material name="pink"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.12 0.08"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_plate">
+    <inertial>
+      <mass value="5.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0"  izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.12 0.08"/>
+      </geometry>
+      <material name="pink"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.12 0.08"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_plate"/>
+    <origin xyz="0.00 0.055 0.05"/>
+  </joint>
+  <joint name="right_plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_plate"/>
+    <origin xyz="0.00 -0.055 0.05"/>
+  </joint>
+  <joint name="back_plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="back_plate"/>
+    <origin xyz="0.055 0.00 0.05"/>
+  </joint>
+  <joint name="front_plate" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_plate"/>
+    <origin xyz="-0.055 0.00 0.05"/>
+  </joint>
+</robot>

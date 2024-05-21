@@ -115,7 +115,7 @@ def intrinsic_to_pb_lrbt(
         intrinsic: Sequence[IntrinsicT]|npt.NDArray, 
         near: float
 ) -> Tuple[float, float, float, float]:
-    """TODO(ssh): ????
+    """
 
     Args:
         intrinsic (Sequence[IntrinsicT] | npt.NDArray): Intrinsic either in numpy or tuple...

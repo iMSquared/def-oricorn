@@ -41,7 +41,7 @@ def Franka_FK(
     if q.shape[0] != 7:
         raise ValueError("q shape must be 7")
 
-    # DH-parameters NOTE(ssh): Default Tuple(pos, quat) pose of link frame in respect to the previous link
+    # DH-parameters
     pq01  = jnp.array([0,0,0.3330]),        tutil.aa2q(jnp.array([0.,0,0]))
     pq12  = jnp.array([0,0,0.]),            tutil.aa2q(jnp.array([-np.pi/2.,0,0]))  # Simplified
     pq23  = jnp.array([0,-0.3160,0.]),      tutil.aa2q(jnp.array([np.pi/2.,0,0]))
@@ -365,8 +365,6 @@ def transform_ee_from_pq(
 ) -> cxutil.LatentObjects:
     """Returns the latent objects of links of robot hand and two grippers with cartesian pose.
 
-    NOTE(ssh): -4/pi is applied after the ee frame
-
     Args:
         ee_posquat (Tuple[jnp.ndarray, jnp.ndarray], optional): Tuple([..., 3], [..., 4]).
         panda_objs (cxutil.LatentObjects): Panda links.
@@ -415,7 +413,6 @@ def get_gripper_center_from_ee_pq(
 ) -> Tuple[jnp.ndarray, jnp.ndarray]:
     """Returns the grasp center positions from ee base pose. 
 
-    TODO(ssh): IDK what center and end are... too confusing now.
     
     Args:
         ee_posquat (Tuple[jnp.ndarray, jnp.ndarray]): Tuple([..., 3], [..., 4]).

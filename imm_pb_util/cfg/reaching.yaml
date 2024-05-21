@@ -1,0 +1,105 @@
+project_params:
+  debug_show_gui: True
+  debug_delay_gui: 0.004166666666666667
+  custom_urdf_path: "urdf"
+
+sim_params:
+  control_hz: 240.0
+  gravity: -9.81
+  debug_camera:
+    distance: 1.2
+    yaw: 310
+    pitch: -43
+    target_position: [0.3, 0.62, -0.16]
+  
+
+manipulation_params:
+  inverse_kinematics:
+    max_num_iterations: 10000
+    residual_threshold: 1.0E-12
+  rrt_restarts: 10
+  rrt_iterations: 50
+
+env_params:
+  reaching_env:
+    cabinet:
+      path: "cabinet/cabinet.urdf"
+      base_pos: [0.0, 0.7, 0.0]
+      base_orn: [0.0, 0.0, 1.5708]
+
+object_params:
+  obstacles:
+  - path: "obstacles/Phillips_Milk_of_Magnesia_Saline_Laxative_Liquid_Original/model.urdf"
+    base_pos: [0.15, 0.5, 0.0]
+    base_orn: [0.0, 0.0, 0.0]
+    color: null
+  - path: "obstacles/Weston_No_33_Signature_Sausage_Tonic_12_fl_oz/model.urdf"
+    base_pos: [-0.14, 0.7, 0.0]
+    base_orn: [0.0, 0.0, 0.0]
+    color: null
+  - path: "obstacles/Wilton_Pearlized_Sugar_Sprinkles_525_oz_Gold/model.urdf"
+    base_pos: [0.05, 0.8, 0.0]
+    base_orn: [0.0, 0.0, 0.0]
+    color: null
+
+camera_params:
+  # Intrinsic is calibrated with NOCS dataset. Do not change.
+  cameras:
+  - type: "simple"
+    extrinsic:
+      pos: [0.0, -0.2, 0.6]
+      orn: [1.1, 0, 0]
+    intrinsic:
+      fov: 45
+      width: 640
+      height: 480
+      focusing_distance: 0.9
+      gl_near_val: 0.1
+      gl_far_val: 5.0
+  - type: "simple"
+    extrinsic:
+      pos: [0.2, -0.2, 0.6]
+      orn: [1.1, 0, 0.3]
+    intrinsic:
+      fov: 45
+      width: 640
+      height: 480
+      focusing_distance: 0.9
+      gl_near_val: 0.1
+      gl_far_val: 5.0
+  - type: "simple"
+    extrinsic:
+      pos: [-0.2, -0.2, 0.6]
+      orn: [1.1, 0, -0.3]
+    intrinsic:
+      fov: 45
+      width: 640
+      height: 480
+      focusing_distance: 0.9
+      gl_near_val: 0.1
+      gl_far_val: 5.0
+
+
+robot_params:
+  franka_panda:
+    path: "franka_panda/urdf"
+    base_pos: [0.0, 0.0, 0.0]
+    base_orn: [0.0, 0.0, 1.5707]
+    link_index_endeffector_base: 8  # Index starts from -1
+    nonfixed_joint_indices_arm: [0, 1, 2, 3, 4, 5, 6]
+    rest_pose: [
+      0.0,     # Joint 0
+      0.0,     # Joint 1
+      0.0,     # Joint 2
+      -3.1416, # Joint 3
+      -3.1416, # Joint 4
+      1.57,    # Joint 5
+      0.785,   # Joint 6   (Wrist)
+      0.0,     # Joint 7   (Fixed)
+      0.0,     # Joint 8   (EE-base)
+      0.04,    # Joint 9   (Finger)
+      0.04,    # Joint 10  (Finger)
+    ]
+    finger_indices: [9, 10]
+    finger_travel: 0.08
+    finger_force: 20.

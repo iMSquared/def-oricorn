@@ -1,0 +1,39 @@
+model {
+  file: "model.sdf"
+}
+name: "Phillips_Milk_of_Magnesia_Saline_Laxative_Liquid_Original"
+description: "Phillips Milk of Magnesia Saline Laxative Liquid Original"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Phillips"
+}
+annotations {
+  key: "gtin"
+  value: "00312843353022"
+}
+annotations {
+  key: "mpn"
+  value: "sku6145319"
+}
+annotations {
+  key: "sku"
+  value: "00312843353022_clone_9cFXqM4XuYa_1425659004615"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Consumer Goods"
+}

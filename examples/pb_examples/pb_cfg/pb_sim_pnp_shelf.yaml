@@ -1,0 +1,94 @@
+project_params:
+  debug_show_gui: True
+  debug_delay_gui: 0.004166666666666667
+  custom_urdf_path: "urdf"
+
+sim_params:
+  control_hz: 240.0
+  gravity: -9.81
+  debug_camera:
+    distance: 1.4
+    yaw: 45
+    pitch: -40
+    target_position: [-0.2, -0.1, 0.3]
+
+manipulation_params:
+  # NOTE(ssh): Temporary parameters for numerical IK.
+  inverse_kinematics:
+    max_num_iterations: 10000
+    residual_threshold: 1.0E-12
+    max_num_variations: 1
+  rrt_restarts: 10
+  rrt_iterations: 3000
+  rrt_star_max_iterations: 2000
+  touch_tol: -0.01
+
+env_params:
+  assets:
+  - name: "cabinet"
+    bullet_integrated: False
+    urdf_name: "cabinet/cabinet.urdf"
+    base_pos: [0.0, 0.0, 0.0]
+    base_orn: [0.0, 0.0, 0.0]
+
+robot_params:
+  franka_panda:
+    path: "franka_panda/urdf"
+    # base_pos: [-0.5381631, 0.00492002, -0.48640874]
+    base_pos: [-0.7081631, 0.00492002, -0.48640874]
+    base_orn: [0.01866526, -0.0062484, -0.0032141]
+    link_index_endeffector_base: 8 # Index starts from -1
+    nonfixed_joint_indices_arm: [0, 1, 2, 3, 4, 5, 6]
+    rest_pose: [
+        -0.0468, # Joint 0
+        -1.0992, # Joint 1
+        -0.0301, # Joint 2
+        -2.3754, # Joint 3
+        -0.0116, # Joint 4
+        1.6467, # Joint 5
+        0.7794, # Joint 6   (Wrist)
+        0.0, # Joint 7   (Fixed)
+        0.0, # Joint 8   (EE-base)
+        0.04, # Joint 9   (Finger)
+        0.04, # Joint 10  (Finger)
+      ]
+    finger_indices: [9, 10]
+    finger_travel: 0.08
+    finger_force: 20.
+
+camera_params:
+  # Intrinsic is calibrated with NOCS dataset. Do not change.
+  cameras:
+    - type: "simple"
+      extrinsic:
+        gl_pos: [-0.41728866, -0.11863621,  0.36744934]
+        gl_orn: [0.9874697560487815, 0.13623771087391043, -1.496789850329231]
+      intrinsic:
+        fov: 42.5
+        width: 424
+        height: 240
+        focusing_distance: 0.9
+        gl_near_val: 0.1
+        gl_far_val: 3.0
+    - type: "simple"
+      extrinsic:
+        gl_pos: [-0.44936204,  0.3839906,   0.3224947]
+        gl_orn: [1.2555998790855913, 0.08145331708546745, -2.22769598624615]
+      intrinsic:
+        fov: 42.5
+        width: 424
+        height: 240
+        focusing_distance: 0.9
+        gl_near_val: 0.1
+        gl_far_val: 3.0
+    - type: "simple"
+      extrinsic:
+        gl_pos: [-0.51231396, -0.3953115,   0.3084126 ]
+        gl_orn: [1.2862374871392919, 0.03043049897838462, -0.9758183420223068]
+      intrinsic:
+        fov: 42.5
+        width: 424
+        height: 240
+        focusing_distance: 0.9
+        gl_near_val: 0.1
+        gl_far_val: 3.0

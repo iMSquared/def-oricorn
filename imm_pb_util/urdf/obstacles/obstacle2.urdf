@@ -1,0 +1,23 @@
+<robot name="obstacle2">
+  <material name="dark_red"><color rgba="0.67 0.27 0.27 1.00"/></material>
+  <link name="base_link">
+    <inertial>
+      <mass value="0.05" />
+      <origin xyz="0.00 0.00 0.075" /> 
+      <inertia  ixx="0.025" ixy="0"  ixz="0"  iyy="0.025"  iyz="0"  izz="0.025" />
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.075" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <cylinder radius="0.03" length="0.15"/>
+      </geometry>
+      <material name="dark_red"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.075" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <cylinder radius="0.03" length="0.15"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

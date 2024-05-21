@@ -90,7 +90,6 @@ def get_obb_from_open3d_mesh(
         center_orn = center_orn.at[:,2].set(-center_orn[:,2])
 
     # longest edge to z-up
-    # NOTE(ssh): Some hand-driven axis swap... not unique.
     long_axis = jnp.argmax(dist_list)
     if long_axis == 0:
         swap = np.array([[0,0,1],
