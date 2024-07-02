@@ -1,6 +1,6 @@
-# OriCORN
+# DEFCORN
 
-This is an official code for OriCORN(submitted to IJRR).
+This is an official code for DEFCORN(submitted to IJRR).
 
 ## Environment setup instruction 
 ```bash
@@ -54,7 +54,7 @@ We did not include the code for real robot experiment due to its hardware depend
 
 
 
-### Representation pretraining
+### Representation(oriCORN) pretraining
 
 We first start with the dataset generation. Once downloaded the preprocessed mesh, run the following script and it will create a new directory `${root}/data/NOCSOcc` and create `.pkl` files containing the dataset for the representation.
 ```bash
