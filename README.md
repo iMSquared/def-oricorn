@@ -1,6 +1,6 @@
-# DEFCORN
+# DEF-oriCORN
 
-This is an official code for DEFCORN(submitted to IJRR).
+This is an official code for DEF-oriCORN(submitted to IJRR).
 
 ## Environment setup instruction 
 ```bash
